@@ -1,0 +1,22 @@
+{
+  "name": "408k",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawel-kuznik/408k.git"
+  },
+  "author": "Pawel Kuznik <pawel.kuznik@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawel-kuznik/408k/issues"
+  },
+  "homepage": "https://github.com/pawel-kuznik/408k#readme"
+}
