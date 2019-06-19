@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/pawel-kuznik/408k/issues"
   },
-  "homepage": "https://github.com/pawel-kuznik/408k#readme"
+  "homepage": "https://github.com/pawel-kuznik/408k#readme",
+  "dependencies": {
+    "pocketdata": "github:pawel-kuznik/pocketdata"
+  }
 }
