@@ -7,7 +7,6 @@
 module.exports = {
     Ability:                require('./lib/Ability.js'),
     Attributes:             require('./lib/Attributes.js'),
-    Entity:                 require('./lib/Entity.js'),
     KeywordList:            require('./lib/KeywordList.js'),
     ModelTempalate:         require('./lib/ModelTemplate.js'),
     PowelLevelProfile:      require('./lib/PowerLevelProfile.js'),
