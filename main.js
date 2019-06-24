@@ -12,7 +12,7 @@ module.exports = {
     PowelLevelProfile:      require('./lib/PowerLevelProfile.js'),
     SquadTemplate:          require('./lib/SquadTemplate.js'),
     TemplateLibrary:        require('./lib/TemplateLibrary.js'),
-    TemplaetStore:          require('./lib/TemplateStore.js'),
+    TemplateStore:          require('./lib/TemplateStore.js'),
     WeaponsListTemplate:    require('./lib/WeaponListTemplate.js'),
     WeaponProfileTemplate:  require('./lib/WeaponProfileTemplate.js'),
     WeaponTemplate:         require('./lib/WeaponTemplate.js'),
