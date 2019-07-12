@@ -96,4 +96,62 @@ describe('KeywordsList', () => {
             expect(list.has('aAa')).to.equal(true);
         });
     });
+
+    describe('.troString()', () => {
+
+        it('should return a string representation of the list separate with commas', () => {
+
+            // construct the keywords list
+            const list = new KeywordList();
+
+            // add the keywords
+            list.add('AAA');
+            list.add('BBB');
+
+            // check if the string matches
+            expect(list.toString()).to.equal('AAA, BBB');
+        });
+    });
+
+    describe('.fill()', () => {
+
+        it('should fill the list with an Array', () => {
+
+            // construct the list
+            const list = new KeywordList();
+
+            // add the keyword
+            list.fill( ['AAA'] );
+
+            // expect that the data is there
+            expect(list.has('AAA')).to.equal(true);
+        });
+
+        it('should fill the list with a string', () => {
+
+            // construct the list
+            const list = new KeywordList();
+
+            // add the keyword
+            list.fill('AAA, BBB');
+
+            // expect that the data is there
+            expect(list.has('AAA')).to.equal(true);
+            expect(list.has('BBB')).to.equal(true);
+        });
+
+        it('should fill the list with a not perfect string', () => {
+
+            // construct the list
+            const list = new KeywordList();
+
+            // add the keyword
+            list.fill('AAA, BBB,ccc');
+
+            // expect that the data is there
+            expect(list.has('AAA')).to.equal(true);
+            expect(list.has('BBB')).to.equal(true);
+            expect(list.has('CCC')).to.equal(true);
+        });
+    });
 });
