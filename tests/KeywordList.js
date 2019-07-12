@@ -9,6 +9,43 @@ const KeywordList = require('../lib/KeywordList.js');
 // test the Entity class
 describe('KeywordsList', () => {
 
+    describe('.size', () => {
+
+        it('should say 0 for new list', () => {
+
+            // construct the keywords list
+            const list = new KeywordList();
+
+            // should be 0
+            expect(list.size).to.equal(0);
+        });
+
+        it('should update after .add()', () => {
+
+            // construct the keywords list
+            const list = new KeywordList();
+
+            // add
+            list.add('AAA');
+
+            // should be 0
+            expect(list.size).to.equal(1);
+        });
+
+        it('should update after .delete()', () => {
+
+            // construct the keywords list
+            const list = new KeywordList();
+
+            // add and delete
+            list.add('AAA');
+            list.delete('AAA');
+
+            // should be 0
+            expect(list.size).to.equal(0);
+        });
+    });
+
     // test the name property
     describe('.add()', () => {
 
@@ -22,6 +59,18 @@ describe('KeywordsList', () => {
 
             // expect that the list has our keyword
             expect(list.has('AAA')).to.equal(true);
+        });
+
+        it('should not add empty strings as keywords', () => {
+
+            // construct the keywords list
+            const list = new KeywordList();
+
+            // add the keywords
+            list.add('');
+
+            // expect that the list has our keyword
+            expect(list.size).to.equal(0);
         });
     });
 
@@ -146,7 +195,10 @@ describe('KeywordsList', () => {
             const list = new KeywordList();
 
             // add the keyword
-            list.fill('AAA, BBB,ccc');
+            list.fill('AAA, BBB,ccc,');
+
+            // make sure we have only 3 valid keywords from the string
+            expect(list.size).to.equal(3);
 
             // expect that the data is there
             expect(list.has('AAA')).to.equal(true);
