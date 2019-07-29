@@ -5,8 +5,45 @@
 // dependencies
 const expect = require('chai').expect;
 const SquadTemplate = require('../lib/SquadTemplate.js');
+const SquadType = require('../lib/SquadType.js');
 
 describe('SquadTemplate', () => {
+
+    describe('.type', () => {
+
+        it('should be NULL initially', () => {
+
+            // construct the template
+            const template = new SquadTemplate();
+
+            // make sure the type is initially null
+            expect(template.type).to.be.a('null');
+        });
+
+        it('should be assignable by string', () => {
+
+            // construct the template
+            const template = new SquadTemplate();
+
+            // assign the type by string
+            template.type = 'hq';
+
+            // expect the type to change
+            expect(template.type).to.be.equal(SquadType.hq);
+        });
+
+        it('should be assignable by SquadType instance', () => {
+
+            // construct the template
+            const template = new SquadTemplate();
+
+            // assign the type by object
+            template.type = SquadType.hq;
+
+            // expect the type to change
+            expect(template.type).to.be.equal(SquadType.hq);
+        });
+    });
 
     describe('.factionKeywords', () => {
 
