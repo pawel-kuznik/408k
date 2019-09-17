@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/pawel-kuznik/408k#readme",
   "dependencies": {
-    "pocketdata": "github:pawel-kuznik/pocketdata"
+    "pocketdata": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
