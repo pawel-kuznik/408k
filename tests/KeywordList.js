@@ -146,6 +146,39 @@ describe('KeywordsList', () => {
         });
     });
 
+    describe('.includes()', () => {
+
+        it('should return true if a pard of the keyword is there', () => {
+
+            // construct the keywords list
+            const list = new KeywordList();
+
+            // epxect that our keyword is not there
+            expect(list.includes('AA')).to.equal(false);
+
+            // add the keywords
+            list.add('AAA');
+
+            // expect that the list has our keyword
+            expect(list.includes('AA')).to.equal(true);
+        });
+
+        it('should check case insensitive', () => {
+
+            // construct the keywords list
+            const list = new KeywordList();
+
+            // add the keywords
+            list.add('AAA');
+
+            // expect that the list has our keyword
+            expect(list.includes('AA')).to.equal(true);
+            expect(list.includes('aa')).to.equal(true);
+            expect(list.includes('Aa')).to.equal(true);
+            expect(list.includes('aA')).to.equal(true);
+        });
+    });
+
     describe('.troString()', () => {
 
         it('should return a string representation of the list separate with commas', () => {
