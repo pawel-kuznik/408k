@@ -1,6 +1,6 @@
 {
   "name": "408k",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "directories": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/pawel-kuznik/408k#readme",
   "dependencies": {
-    "pocketdata": "^1.0.1"
+    "pocketdata": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
