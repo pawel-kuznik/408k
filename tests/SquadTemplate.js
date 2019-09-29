@@ -3,11 +3,16 @@
  */
 
 // dependencies
-const expect = require('chai').expect;
-const SquadTemplate = require('../lib/SquadTemplate.js');
-const SquadType = require('../lib/SquadType.js');
+const expect            = require('chai').expect;
+const SquadTemplate     = require('../lib/SquadTemplate.js');
+const SquadType         = require('../lib/SquadType.js');
+const SquadComposition  = require('../lib/SquadComposition.js');
+const TemplateStore     = require('../lib/TemplateStore.js');
 
 describe('SquadTemplate', () => {
+
+    // create a template store
+    const store = new TemplateStore();
 
     describe('.type', () => {
 
@@ -152,6 +157,18 @@ describe('SquadTemplate', () => {
             // make sure we have an object to deal with
             expect(template.keywords.has('AAA')).to.equal(true);
             expect(template.keywords.has('BBB')).to.equal(true);
+        });
+    });
+
+    describe('.composition', () => {
+
+        it('should return SquadComposition instance', () => {
+
+            // create a squad template instance
+            const template = store.create(SquadTemplate);
+
+            // make sure we expose squad composition
+            expect(template.composition).to.be.instanceof(SquadComposition);
         });
     });
 });
