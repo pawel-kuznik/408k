@@ -29,6 +29,21 @@ describe('CompositionRule', () => {
             // expect the model instances to match
             expect(rule.model).to.be.equal(model);
         });
+
+        it('should set a model by ID', () => {
+
+            // the rule
+            const rule = templateStore.create(CompositionRule);
+
+            // assgin the model
+            rule.model = model.id;
+
+            // expect the ModelTemplate
+            expect(rule.model).to.be.instanceof(ModelTemplate);
+
+            // expect the model instances to match
+            expect(rule.model).to.be.equal(model);
+        });
     });
 
     describe('.replacementModel', () => {
@@ -40,6 +55,21 @@ describe('CompositionRule', () => {
 
             // assgin the model
             rule.replacementModel = model;
+
+            // expect the ModelTemplate
+            expect(rule.replacementModel).to.be.instanceof(ModelTemplate);
+
+            // expect the model instances to match
+            expect(rule.replacementModel).to.be.equal(model);
+        });
+
+        it('should set a model by ID', () => {
+
+            // the rule
+            const rule = templateStore.create(CompositionRule);
+
+            // assgin the model
+            rule.replacementModel = model.id;
 
             // expect the ModelTemplate
             expect(rule.replacementModel).to.be.instanceof(ModelTemplate);
