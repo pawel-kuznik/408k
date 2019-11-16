@@ -14,6 +14,24 @@ describe('SquadTemplate', () => {
     // create a template store
     const store = new TemplateStore();
 
+    describe('.powerRating', () => {
+
+        it('should set/get power rating', () => {
+
+            // construct a template
+            const template = new SquadTemplate();
+
+            // expect 0 initially
+            expect(template.powerRating).to.equal(0);
+
+            // set power rating
+            template.powerRating = 5;
+
+            // expect new value
+            expect(template.powerRating).to.equal(5);
+        });
+    });
+
     describe('.type', () => {
 
         it('should be NULL initially', () => {
