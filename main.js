@@ -17,5 +17,8 @@ module.exports = {
     WeaponsListTemplate:    require('./lib/WeaponListTemplate.js'),
     WeaponProfileTemplate:  require('./lib/WeaponProfileTemplate.js'),
     WeaponTemplate:         require('./lib/WeaponTemplate.js'),
+
+    Squad:                  require('./lib/Squad.js'),
+    ListStore:              require('./lib/ListStore.js')
 };
 
