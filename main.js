@@ -9,7 +9,6 @@ module.exports = {
     Attributes:             require('./lib/Attributes.js'),
     KeywordList:            require('./lib/KeywordList.js'),
     ModelTempalate:         require('./lib/ModelTemplate.js'),
-    PowelLevelProfile:      require('./lib/PowerLevelProfile.js'),
     SquadTemplate:          require('./lib/SquadTemplate.js'),
     SquadType:              require('./lib/SquadType.js'),
     TemplateStore:          require('./lib/TemplateStore.js'),
