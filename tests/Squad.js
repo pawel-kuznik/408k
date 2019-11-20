@@ -12,8 +12,22 @@ const examples = () => {
 
     const templates = new TemplateStore();
 
+    const modelA = templates.createModel({ name: 'model A' });
+    const modelB = templates.createModel({ name: 'model B' });
+
     const squadA = templates.createSquad({ name: 'squad A' });
     const squadB = templates.createSquad({ name: 'squad B' });
+
+    // construct composition 
+    const squadACompositionLeader = squadA.composition.rules.create({
+        base:   true,
+        count:  1,
+        model:  modelA.id
+    });
+
+    squadACompositionLeader.base = true;
+    squadACompositionLeader.count = 1;
+    squadACompositionLeader.model = modelA;
 
     const lists = new ListStore(templates);
 
@@ -26,6 +40,27 @@ const examples = () => {
 };
 
 describe('Squad', () => {
+
+    describe('.populate()', () => {
+
+        it('should populate the instance with base models', () => {
+
+            // get sample data
+            const samples = examples();
+
+            // construct the squad
+            const squad = samples.lists.createSquad(samples.squadA);
+
+            // init the squad
+            squad.populate();
+
+            // this test makes only sense when composition rules are non-zero
+            expect(squad.template.composition.rules.size).to.be.above(0);
+
+            // check if we have any base models
+            expect(squad.models.size).to.be.above(0);
+        });
+    });
 
     describe('.template', () => {
 
